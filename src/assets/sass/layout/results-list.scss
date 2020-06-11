@@ -1,0 +1,50 @@
+// --------------------------------------------------------------
+//   RESULTS LIST
+//---------------------------------------------------------------
+
+.results-list {
+  @include size(100%, calc(100% - 70px));
+  padding-top: 20px;
+
+  &__content {
+    @include size(100%);
+    display: flex;
+    flex-flow: column;
+    overflow-y: auto;
+
+    @include breakpoint(sm) { flex-wrap: wrap; }
+  }
+  
+  &__item {
+    padding: 15px 25px;
+    box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.196269);
+    cursor: pointer;
+    flex: 1 0 0;
+    min-height: 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 14px;
+
+    @include breakpoint(sm) { 
+      flex: 1 1 25%;
+      padding: 15px 5%;
+    }
+
+    &.light {
+      color: white;
+    }
+
+    &.dark {
+      color: $darkgray;
+    }
+    
+    p {
+      margin: 5px 0 0;
+
+      &:first-of-type {
+        font-weight: bold;
+      }
+    }
+  }
+}

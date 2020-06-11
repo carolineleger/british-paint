@@ -1,0 +1,17 @@
+
+
+@import "./config/mixins.scss";
+@import "./config/fonts.scss";
+@import "./config/colors.scss";
+@import "./config/animations.scss";
+
+@import "./elements/button.scss";
+@import "./elements/popup.scss";
+
+@import "./layout/common.scss";
+@import "./layout/landing.scss";
+@import "./layout/questions.scss";
+@import "./layout/mixing.scss";
+@import "./layout/results.scss";
+@import "./layout/results-list.scss";
+@import "./layout/results-gallery.scss";

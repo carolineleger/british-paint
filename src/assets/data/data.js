@@ -1,0 +1,245 @@
+// LANDING
+var landingColours = [
+  {
+    "id": 416,
+    "red": 194,
+    "green": 80,
+    "blue": 100,
+    "hexValue": "#c25064",
+    "colourName": "Pink Groove",
+    "type": "dark"
+  },
+  {
+    "id": 362,
+    "red": 122,
+    "green": 91,
+    "blue": 143,
+    "hexValue": "#7a5b8f",
+    "colourName": "Purple Shock",
+    "type": "dark"
+  },
+  {
+    "id": 142,
+    "red": 0,
+    "green": 119,
+    "blue": 138,
+    "hexValue": "#00778a",
+    "colourName": "Grand Turquoise",
+    "type": "dark",
+  },
+  {
+    "id": 421,
+    "red": 188,
+    "green": 47,
+    "blue": 49,
+    "hexValue": "#bc2f31",
+    "colourName": "Red Alert",
+    "type": "dark",
+  }
+]
+
+export const landing = {
+  title: "Hello, this is the colour wall. The cure for your FOMU*",
+  colours: landingColours[Math.floor(Math.random() * Math.floor(landingColours.length))]
+};
+
+export const randomTitlesResults = [
+  "I like it a lot!",
+  "Delightful choice of",
+  "Outstanding",
+  "It can't go wrong with",
+  "Wow! I was going to paint my place",
+  "You're so on trend with",
+  "Awesome! I'd love to paint my place",
+  "It's going to look great coloured",
+]
+
+//QUESTIONS
+export const question1 = {
+  title: "Are you painting an interior or exterior surface?",
+  number: "one",
+  color: {
+    "id": 68,
+    "red": 28,
+    "green": 57,
+    "blue": 105,
+    "hexValue": "#1c3969",
+    "colourName": "Sea Shepherd",
+    "type": "dark",
+  },
+  colours: [
+    {
+      red: "",
+      green: "",
+      blue: "",
+      name: "interior",
+      image: "home-icon-int-white.svg",
+    },
+    {
+      red: "",
+      green: "",
+      blue: "",
+      name: "exterior",
+      image: "home-icon-ext-white.svg",
+    },
+  ],
+};
+
+export const question2 = {
+  title: "What are you looking for?",
+  number: "two",
+  color: {
+    "id": '',
+    "red": 255,
+    "green": 255,
+    "blue": 255,
+    "colourName": "",
+    "type": "cool"
+  },
+  colours: [
+    {
+      name: "Whites",
+      mainTitle: "Clean & Fresh!",
+      "colourName": "Snow Peak",
+      "red": 229,
+      "green": 228,
+      "blue": 221,
+      "id": "W12",
+      type: "light",
+      category: "Whites",
+    },
+    {
+      name: "Neutrals",
+      mainTitle: "Neutral, Classic",
+      "id": 72,
+      "colourName": "Lovey",
+      "friendlyURL": "lovey",
+      "red": 236,
+      "blue": 209,
+      "green": 222,
+      type: "light",
+      category: "Neutrals",
+    },
+    {
+      name: "Colours",
+      mainTitle: "A Splash of colour!",
+      "id": 362,
+      "red": 122,
+      "green": 91,
+      "blue": 143,
+      "colourName": "Purple Shock",
+      "type": "dark",
+    },
+    {
+      name: "Greys",
+      mainTitle: "Smooth and moody grey",
+      "id": 259,
+      "colourName": "Systematic",
+      "red": 106,
+      "blue": 119,
+      "green": 112,
+      type: "dark",
+      category: "Greys",
+    },
+  ],
+};
+
+export const question3Colour = {
+  title: "Pick your favourite colour",
+  number: "three",
+  color: {
+    colourName: "",
+    code: "",
+    red: "255",
+    green: "255",
+    blue: "255",
+    type: "light",
+  },
+  colours: [
+    {
+      mainTitle: "Cheerful Yellow, strong choice!",
+      "id": 470,
+      "colourName": "Buttercup Field",
+      "friendlyURL": "buttercup-field",
+      "red": 250,
+      "blue": 100,
+      "green": 211,
+      type: "light",
+      category: "Yellow",
+    },
+    {
+      mainTitle: "Cheerful Orange, for the win!",
+      "id": 299,
+      "colourName": "Fizzy Sherbet",
+      "friendlyURL": "fizzy-sherbet",
+      "red": 255,
+      "blue": 162,
+      "green": 207,
+      type: "light",
+      category: "Orange",
+    },
+    {
+      mainTitle: "Striking reds. Nice vibes",
+      "id": 418,
+      "colourName": "Hot Pop Red",
+      "friendlyURL": "hot-pop-red",
+      "red": 197,
+      "blue": 64,
+      "green": 58,
+      type: "dark",
+      category: "Red",
+    },
+    {
+      mainTitle: "Calming blues ahead",
+      "id": 48,
+      "colourName": "Harbour View",
+      "friendlyURL": "harbour-view",
+      "red": 5,
+      "blue": 189,
+      "green": 120,
+      type: "dark",
+      category: "Blue",
+    },
+    {
+      mainTitle: "Soft and playful Purple",
+      "id": 351,
+      "colourName": "Lilac Mood",
+      "red": 209,
+      "blue": 220,
+      "green": 191,
+      type: "light",
+      category: "Purple",
+    },
+    {
+      mainTitle: "Delicate Pink. Nice touch",
+      "id": 379,
+      "colourName": "Cherry Vanilla",
+      "red": 254,
+      "blue": 212,
+      "green": 211,
+      type: "light",
+      category: "Pink",
+    },
+    {
+      mainTitle: "Soothing Greens ahoy!",
+      "id": 187,
+      "colourName": "Outside",
+      "friendlyURL": "outside",
+      "red": 181,
+      "blue": 91,
+      "green": 185,
+      type: "dark",
+      category: "Green",
+    },
+    {
+      mainTitle: "Energising Teal all the way",
+      "id": 148,
+      "colourName": "Tempted Teal",
+      "red": 33,
+      "blue": 157,
+      "green": 142,
+      type: "dark",
+      category: "Teal",
+    },
+  ],
+};

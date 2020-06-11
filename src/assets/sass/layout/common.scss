@@ -1,0 +1,153 @@
+// --------------------------------------------------------------
+//  LAYOUT
+//---------------------------------------------------------------
+
+* {
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  min-width: 320px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  outline: 0;
+}
+
+#app {
+  width: 100%;
+  transition: 0.5s;
+
+  &.light, &.cool, &.warm {
+    color: $darkgray;
+
+    .back {
+      path { fill: #4A4A4A }
+    }
+
+    .logo { background-image: url('~@/assets/img/bp-logo-dark.svg');}
+
+    button { color: $darkgray }
+  }
+
+  &.dark {
+    color: #FFF;
+
+    button { color: #FFF }
+
+    .back, .results__views  {
+      path { fill: #FFF }
+    }
+  }
+}
+
+.main {
+  width: 100%;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.landing, .results, .questions {
+  max-width: 450px;
+  margin: auto;
+  @include breakpoint(sm) {max-width: 500px;}
+}
+
+.landing, .questions {
+  @include breakpoint(sm) {
+    @include absolute(0,0,0,0);
+    margin: auto;
+    position:absolute;
+    height: 600px; /*requires explicit height*/
+  }
+}
+
+h1 {
+  font-size: 28px;
+  font-family: "Open Sans Bold",  sans-serif;
+  padding-top: 5%;
+  max-width: 80%;
+  line-height: 1.3em;
+
+  @include breakpoint(sm) {
+    max-width: 100%;
+    text-align: center;
+    font-size: 3rem;
+  }
+}
+
+.none {
+  display: none;
+}
+
+.opacity0 {
+  opacity: 0;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s forwards;
+}
+
+.logo {
+  @include size(135px, 20px);
+  background: url('~@/assets/img/bp-logo.svg') no-repeat center;
+  margin: 35px auto 20px;
+  z-index: 30;
+  position: relative;
+  outline: 0!important;
+  cursor: pointer;
+
+  @include breakpoint(sm-height) {
+    margin: 25px auto 20px;
+  }
+
+  @include breakpoint(sm) {
+    margin-left: 5%;
+  }
+}
+
+.selected-color {
+  @include absolute(auto, auto, 25px, 25px);
+  margin: auto;
+  font-size: 14px;
+  text-align: left;
+  width: 300px;
+  text-transform: capitalize;
+
+  @include breakpoint(sm) { left: 5%; }
+
+  span { text-transform: uppercase; }
+
+  p {
+    margin: 0 0 5px;
+  }
+}
+
+.back {
+  position: fixed;
+  cursor: pointer;
+  padding: 38px 25px;
+  z-index: 20;
+  top:0;
+  left: 0; 
+
+  @include breakpoint(sm-height) {
+    padding: 25px 25px;
+  }
+  
+  &:focus, &:active {
+    outline: 0!important;
+  }
+}

@@ -1,0 +1,218 @@
+// --------------------------------------------------------------
+//   RESULTS GALLERY
+//---------------------------------------------------------------
+
+.results-gallery {
+  @include size(100%);
+  overflow:auto;
+
+  &__header {
+    background-color: white;
+    color: $darkgray;
+    padding: 15px 25px;
+    height: 150px;
+
+    @include breakpoint(sm-height) {
+      padding: 5px 25px;
+      height: 100px;
+    }
+
+    @include breakpoint(sm) {
+      padding: 20px 5%;
+      width: 100%;
+    }
+
+    &__headline {
+      font-family: "Open Sans Light", sans-serif;
+      margin-top: 50px;
+    }
+  
+    h1 {
+      margin: 20px 0 0;
+      padding-top: 0;
+      text-align: left;
+
+      @include breakpoint(sm-height) {margin-top: 0px;}
+    }
+  
+    h2 {
+      font-size: 28px;
+      font-weight: 300;
+      margin: 0px 0 20px;
+
+      @include breakpoint(sm-height) {
+        margin-bottom: 5px;
+        margin-top: -5px;
+      }
+    }
+  }
+
+  .zoom-container {
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+
+    @include breakpoint(sm) {margin-top: 30px}
+  }
+
+  .pinch-zoom-overlay {
+    @include absolute(0,0,0,0);
+    @include size(115px, 265px);
+    margin: auto;
+    background: url('~@/assets/img/pinchtap.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 30;
+    pointer-events: none;
+
+    &.fadeOut {
+      animation: fadeOut 1.5s forwards;
+    }
+  }
+
+  &__grid {
+    @include size(100%);
+    background-color: black;
+    position:relative;
+    display: flex;
+    max-width: 414px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    z-index: 1;
+
+    @include breakpoint(sm) {
+      max-width: 350px;
+      margin: auto;
+    }
+
+    @include breakpoint(md) {
+      max-width: 480px;
+    }
+
+    &.left {
+      animation: slideGridL 0.5s forwards;
+    }
+
+    &.centerFromL {
+      animation: slideBackR 0.5s forwards;
+    }
+    
+    &.right {
+      animation: slideGridR 0.5s forwards;
+    }
+
+    &.centerFromR {
+      animation: slideBackL 0.5s forwards;
+    }
+
+    .grid__block {
+      width: 5%;
+      position: relative;
+      cursor: pointer;
+      opacity: 0.7;
+
+      &.active {
+        opacity: 1;
+        box-shadow:inset 0px 0px 0px 1px #FFF; //remove for initial design
+      }
+    }
+
+    &.all-visible {
+      .grid__block {
+        opacity: 1;
+      }
+    }
+
+    ///Sides grids
+    &.whites, &.colourbond {
+      @include size(225px, 40px!important);
+      display: block;
+
+      @include breakpoint(sm) {
+        @include size(171px, auto!important);
+      }
+
+      @include breakpoint(md) {
+        @include size(225px, 40px!important);
+      }
+
+      .grid__block {
+        @include size(25px, 20px!important);
+        float: left;
+
+        @include breakpoint(sm) { 
+          @include size(19px, 19px!important);
+        }
+
+        @include breakpoint(md) {
+          @include size(25px, 20px!important);
+        }
+      }
+    }
+  }
+
+  .grid-left {
+    @include absolute(40%, auto, auto, 25px);
+    z-index: 0;
+
+    &.left {
+      animation: slideGridLeft 0.5s forwards;
+    }
+  }
+
+  .grid-right {
+    @include absolute(40%, 25px, auto, auto);
+    z-index: 0;
+
+    &.right {
+      animation: slideGridRight 0.5s forwards;
+    }
+  }
+
+  .grid-left, .grid-right {
+    h3 {
+      @include breakpoint(sm) {
+        margin-bottom: 5px;
+        font-weight: 400;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .complimentary {
+    @include absolute(auto, null, 35px, null);
+    color: white;
+    z-index: 20;
+    text-align: center;
+    width: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    .arrow {
+      margin-left: 0px;
+      cursor: pointer;
+
+      &.slided { 
+        margin-left: -320px;
+        transition: 0.4s;
+      }
+
+      &.arrow-R {
+        margin-left: 20px;
+        transform: scaleX(-1);
+
+        &.slided { 
+          margin-left: 180px;
+          transition: 0.4s;
+        }
+      }
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}

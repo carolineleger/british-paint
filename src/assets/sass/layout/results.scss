@@ -1,0 +1,137 @@
+// --------------------------------------------------------------
+//   RESULTS
+//---------------------------------------------------------------
+
+.results {
+  @include size(100%);
+  padding: 0 25px 25px;
+
+  @include breakpoint(sm) {
+    float: left;
+    padding: 25px 5%;
+  }
+
+  &__views {
+    @include absolute (35px, 25px, auto, auto);
+    z-index: 20;
+
+    @include breakpoint(sm-height) {
+      @include absolute (25px, 25px, auto, auto);
+    }
+
+    @include breakpoint(sm) {
+      right: 5%;
+    }
+
+    svg {
+      margin-left: 15px;
+      float: left;
+      opacity: 0.2;
+      cursor: pointer;
+      position: relative;
+      z-index: 20;
+      outline: 0!important;
+
+      path { fill: black; }
+
+      &.active { opacity: 1 }
+
+      &.icon-list {
+       margin-top: 4px;
+      }
+    }
+  }
+
+  &__headline {
+    font-family: "Open Sans Light", sans-serif;
+    margin-top: 80px;
+  }
+
+  h1 {
+    margin: 20px 0 0;
+    padding-top: 0;
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 300;
+    margin: 0px 0 20px;
+  }
+
+  a {
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: underline;
+    clear: both;
+  }
+
+  &__bottom {
+    @include absolute (auto, 25px, 105px, 25px);
+    text-align: center;
+
+    @include breakpoint(sm) { 
+      right: auto;
+      left: 5%;
+    }
+
+    button {
+      background-image: url('~@/assets/img/shop.svg'); 
+      background-repeat: no-repeat;
+      background-position: left 20% center;
+      margin-bottom: 5px;
+      padding-left: 50px;
+      background-color: rgba(0,0,0,0.5);
+      color: white!important;
+
+      @include breakpoint(sm) { 
+        @include size(310px, 50px);
+        margin: 0;
+      }
+    }
+
+    p { 
+      font-size: 12px;
+      text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__complimentary-section {
+    @include size(100%, 90px);
+    @include absolute(auto, auto, 0px, 0);
+
+    @include breakpoint(sm) {
+      @include size(40%, 100%);
+      @include absolute(0, 0, 0, auto);
+      margin-left: 40%;
+    }
+
+    @include breakpoint(md) {
+      @include size(30%, 100%);
+      margin-left: 30%;
+    }
+
+    .results__complimentary {
+      @include size(50%, 100%);
+      float: left;
+      padding: 25px;
+      font-size: 14px;
+
+      @include breakpoint(sm) {
+        @include size(100%, 50%);
+      }
+
+      &.light {
+        color: white;
+      }
+
+      &.dark {
+        color: $darkgray;
+      }
+    }
+  }
+}

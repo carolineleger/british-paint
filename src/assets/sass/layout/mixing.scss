@@ -1,0 +1,121 @@
+// --------------------------------------------------------------
+//  MIXING
+//---------------------------------------------------------------
+
+.mixing {
+  @include absolute(0, 0, 0, 0);
+  @include size(100%);
+  overflow: hidden;
+
+  &__content {
+    @include absolute(0, auto, 0, 0);
+    @include size(100%, 150px);
+    text-align: center;
+    margin: auto;
+
+    h1 {
+      max-width: 100%;
+      padding-top: 0;
+      margin: 20px 0 5px 0;
+    }
+
+    img {
+      @include size(90px);
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    transform: translate3d(0, 0, 0);
+    position: absolute;
+  }
+  
+  .wave-container {
+    @include size(100%);
+    animation: slideUp 3s forwards linear;
+    position: relative;
+  }
+
+  .wave {
+    position: absolute;
+    left: 50%;
+    width: 1000px;
+    height: 1000px;
+    margin-left: -500px;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 4000ms infinite linear;
+
+    @include breakpoint(sm) {
+      @include size(2000px);
+      margin-left: -1000px;
+    }
+  }
+
+  @keyframes drift {
+    from { transform: rotate(0deg); }
+    from { transform: rotate(360deg); }
+  }
+
+  @keyframes slideUp {
+    from { 
+      top: 800px;
+    }
+    to {
+      top: -200px;
+    }
+  }
+
+  //ding 
+  .ding-icon {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin: auto;
+  }
+
+ // Bursts Animation
+  ul.bursts {
+    @include size(100px);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: calc(50% - (.5 * 2px)); //override position in sections
+    top: 3%;
+    // individual light bursts
+
+    li {
+      @include size(3px, 100%);
+      background: transparent;
+      position: absolute;
+
+      &::after {
+        @include size(3px, 50%);
+        content: '';
+        background: white;
+        position: absolute;
+        bottom: 50%;
+        animation: lightBursts 2s ease-in-out 0s forwards;
+      }
+      //Draw 10 light bursts - use class name to include
+      &.deg0   {@include transform(rotate(0deg));}
+      &.deg36  {@include transform(rotate(36deg));}
+      &.deg72  {@include transform(rotate(72deg));}
+      &.deg108 {@include transform(rotate(108deg));}
+      &.deg144 {@include transform(rotate(144deg));}
+      &.deg180 {@include transform(rotate(180deg));}
+      &.deg216 {@include transform(rotate(216deg));}
+      &.deg252 {@include transform(rotate(252deg));}
+      &.deg288 {@include transform(rotate(288deg));}
+      &.deg324 {@include transform(rotate(324deg));}
+    }  
+  }
+}
